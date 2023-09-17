@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
+import { registerRootComponent } from 'expo';
 import {
   StyleSheet,
   View,
   Animated,
-  Alert
+  Alert, AppRegistry
 } from 'react-native'
 import LotoGame from "./src/components/LotoGame";
 import PullDigits from "./src/components/PullDigits";
@@ -40,7 +41,7 @@ export default class App extends Component {
     return (
       <View style={{flex: 1}}>
         <Routing/>
-        <SignUpDialog/>
+       {/* <SignUpDialog/>*/}
         {/*<ListFlipingComponents/>*/}
       </View>
     );
@@ -61,3 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'red'
   }
 })
+const appName = 'gamesTime'; // Replace with your app's name
+registerRootComponent(App);
+

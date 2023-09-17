@@ -77,13 +77,13 @@ export default class GameBox extends Component{
               </Text>
             </View>
           </View>
-          <Animated.View style = {{position: 'absolute', margin: this.movingEmoji, transform:[{rotateY: rotation}]}}>
+          {/*<Animated.View style = {{position: 'absolute', margin: this.movingEmoji, transform:[{rotateY: rotation}]}}>
             <Text style ={{backgroundColor: "yellow",
               fontWeight: 'bold',
             fontSize:14}}>
               All Lives Matter
             </Text>
-          </Animated.View>
+          </Animated.View>*/}
         </View>
       </ScrollView>
     )

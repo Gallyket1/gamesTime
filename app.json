@@ -1,7 +1,6 @@
 {
   "expo": {
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "name": "gamesTime",
     "slug": "gamesTime",
     "platforms": [
@@ -18,7 +17,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "useClassicUpdates": true
     },
     "assetBundlePatterns": [
       "**/*"
@@ -36,7 +36,6 @@
         }
       }
     },
-    "entryPoint": "node_modules/expo/AppEntry.js",
     "android": {
       "package": "com.gally.gamesTime"
     }

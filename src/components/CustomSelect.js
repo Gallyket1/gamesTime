@@ -1,45 +1,22 @@
-import React from 'react'
-import {Picker, StyleSheet, View, Text} from "react-native";
-import SelectInput from 'react-native-select-input-ios'
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import CustomDropdown from './CustomDropdown'; // Import the custom dropdown component
 
-export default function CustomSelect({list, handleSelectChange, title, option}){
+export default function CustomSelect({ list, handleSelectChange, title }) {
+  const [selectedOption, setSelectedOption] = useState(null); // Track the selected option
 
- /* const options = list.map(element => <Picker.Item
-    key={element.id} label = {element.val + '$'} value = {element.val}/>)*/
   return (
-    <View style = {styles.container}>
-      <Text style = {styles.title}> {title}</Text>
-     {/* <Picker
-        selectedValue={option}
-        style={styles.pickerStyle}
-        onValueChange={handleSelectChange}
-      >
-        {options}
-      </Picker>*/}
-      <SelectInput
-        options={list}
-        value ={0}
-        onSubmitEditing={handleSelectChange}
-        style={{backgroundColor: "skyblue", width: 100, height: 40, justifyContent: 'center'}}
-      />
-    </View>
-  )
+      <View style={{ flexDirection: 'column', marginBottom: 20 }}>
+        <Text style={{ color: 'orange', fontWeight: 'bold' }}>{title}</Text>
+
+        <CustomDropdown
+            options={list}
+            selectedOption={selectedOption}
+            onSelect={(option) => {
+              setSelectedOption(option); // Update the selected option
+              handleSelectChange(option.value); // Call the provided change handler
+            }}
+        />
+      </View>
+  );
 }
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    marginBottom: 20
-  },
-  title: {
-    color: 'orange',
-    fontWeight: 'bold',
-  },
-  pickerStyle: {
-    height: 25,
-    width: 50,
-    color: "white",
-    backgroundColor: 'dodgerblue',
-    borderWidth: 1,
-    borderRadius: 12
-  }
-})
